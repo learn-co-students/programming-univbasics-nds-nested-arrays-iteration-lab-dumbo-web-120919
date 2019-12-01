@@ -14,14 +14,15 @@ def join_ingredients(src)
     ir = 0 
     foods = []
     while ir < src[i].count do 
-      foods << src[i][ir]
+   #binding.pry
+      foods << src[i][ir] 
       puts foods
       ir += 1
     end 
-  new_array << "I love"+ foods+ "and"+ foods+ "on my pizza"
-  
+    new_array << "I love"+ src[i][ir] + "and"+ src[i][ir + 1]+ "on my pizza"
   i += 1 
-end
+end 
+
 return new_array
 
 end
