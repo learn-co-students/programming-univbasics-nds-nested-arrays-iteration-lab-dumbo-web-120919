@@ -11,15 +11,7 @@ def join_ingredients(src)
   new_array = []
   i = 0 
   while i < src.count do 
-    ir = 0 
-    foods = []
-    while ir < src[i].count do 
-   #binding.pry
-      foods << src[i][ir] 
-      puts foods
-      ir += 1
-    end 
-    new_array << "I love"+ src[i][ir] + "and"+ src[i][ir + 1]+ "on my pizza"
+    new_array << "I love " + src[i][0] + " and " + src[i][1] + " on my pizza"
   i += 1 
 end 
 
@@ -31,6 +23,20 @@ def find_greater_pair(src)
   # src will be an array of [ [number1, number2], ... [numberN, numberM] ]
   # Produce a new Array that contains the larger number of each of the pairs
   # that are in the inner Arrays
+u = 0 
+fix = []
+while u < src.length do 
+ 
+    if  src[u][0] > src[u][1]
+      fix << src[u][0]
+    else 
+      fix << src[u][1]
+    end
+  u += 1
+end 
+
+return fix
+
 end
 
 def total_even_pairs(src)
@@ -41,4 +47,13 @@ def total_even_pairs(src)
   # As a reminder any number % 2 will return 0 or 1. If the result is 0, then
   # the number was even. Review the operator documentation if you've forgotten
   # this!
+  wip = 0
+  qp = 0 
+  while qp < src.count do 
+    if src[qp][0]% 2 == 0 && src[qp][1] % 2 == 0 
+      wip += (src[qp][0] + src[qp][1])
+  end
+  qp += 1
+end 
+return wip 
 end
