@@ -1,11 +1,21 @@
 def join_ingredients(src)
-  # Given an Array of 2-element Arrays ( [ [food1, food2], [food3, # food4]....[foodN, foodM]]):
-  #
-  # Build a new Array that contains strings where each pair of foods is
-  # inserted into this template:
-  #
-  # "I love (inner array element 0) and (inner array element 1) on my pizza""
-  # As such, there should be a new String for each inner array, or pair
+array_1 = [
+  ['pepperoni', 'sausage'],
+  ['green olives', 'green peppers'],
+  ['onions', 'pineapple']
+]
+
+outer_results = []
+row_index = 0
+while row_index < array_1.count do
+  element_index = 0
+  inner_results = "I love "
+  while element_index < array_1[row_index].count do
+    puts inner_results << array_1[row_index].join(' and ') "on my pizza"
+    element_index += 1
+  end
+  row_index += 1
+end
 end
 
 def find_greater_pair(src)
